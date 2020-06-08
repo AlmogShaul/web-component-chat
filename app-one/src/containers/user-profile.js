@@ -40,13 +40,16 @@ export class UserProfile extends LitElement {
       background:transparent;
       border:0px;
       border-bottom:1px solid gray;
-      color:var (--user-profile-text-color);
+      color:var(--user-profile-text-color);
       font-size:20px;
       height:30px;
       width:200px;
     }
     .name-input:focus{
       outline:0;
+    }
+    .name-input::placeholder{
+      color:var(--user-profile-text-color);
     }
 
     .go-btn{
@@ -112,7 +115,7 @@ export class UserProfile extends LitElement {
       this.showErrorMessage = true;
     }else{
       this.showErrorMessage = false;
-      let user ={avatar:this.selectedAvatar,name:this.userName};
+      const user ={avatar:this.selectedAvatar,name:this.userName};
       UserService.setUser(user);
       this.dispatchEvent(new CustomEvent("user-created", {detail:user}));
     }

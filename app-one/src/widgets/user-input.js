@@ -9,11 +9,13 @@ export class UserInput extends LitElement {
       page: { type: String },
     };
   }
+
 constructor() {
   super();
   this.userMessage = 'hi';
   this.handleEnterAction();
 }
+
   static get styles() {
     return css`
       :host {
@@ -62,11 +64,14 @@ constructor() {
      </div>
     `;
   }
+
   userInputChanged(event){
     this.userMessage = event.target.value;
     ChatService.sendTypingMessage();
   }
+
   handleSendMessageRequest(){
+    if(!this.userMessage) return;
     ChatService.sendMessage(this.userMessage);
     this.userMessage = '';
     this.focusUserInput();
@@ -81,7 +86,7 @@ constructor() {
   }
 
   focusUserInput() {
-    let userInput = this.shadowRoot.querySelector('.input-message');
+    const userInput = this.shadowRoot.querySelector('.input-message');
     if(userInput){
       userInput.focus();
     }
