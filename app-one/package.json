@@ -64,6 +64,6 @@
     "moment": "^2.26.0",
     "paper-carousel": "^1.1.1",
     "rxjs": "^6.5.5",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
