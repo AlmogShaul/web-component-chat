@@ -61,7 +61,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "lit-element": "^2.0.1",
     "lit-html": "^1.0.0",
-    "moment": "^2.26.0",
+    "moment": "^2.29.2",
     "paper-carousel": "^1.1.1",
     "rxjs": "^6.5.5",
     "socket.io": "^2.3.0"
